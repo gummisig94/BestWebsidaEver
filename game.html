@@ -1,0 +1,34 @@
+<html>
+<b>The Game</b>
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+<form action="Index.html">
+    <input type="submit" value="Tilbaka" />
+</form>
+<script>
+var canvas;
+var canvasContext;
+var ballX = 50;
+
+window.onload = function() {
+	canvas = document.getElementById('gameCanvas');
+	canvasContext = canvas.getContext('2d');
+
+	var framesPerSeconds = 30;
+	setInterval(drawEverything, 1000/framesPerSeconds);
+}
+
+function drawEverything() {
+	ballX = ballX + 5;
+
+	console.log("ballX");
+	canvasContext.fillStyle = 'black';
+	canvasContext.fillRect(0,0,canvas.width,canvas.height);
+	canvasContext.fillstyle = 'white';
+	canvasContext.fillRect(225,210,200,200);
+	canvasContext.fillStyle = 'red';
+	canvasContext.fillRect(ballX,200,50,25);
+}
+
+</script>
+
+</html>
