@@ -1,5 +1,4 @@
 ﻿body {
-    background-color: #00ffbf;
     font-family: "bookman old style";
 }
 
@@ -9,7 +8,9 @@
 }
 
 h3,
-h1 {
+h1,
+h4,
+h5 {
     color: indianred;
 }
 
