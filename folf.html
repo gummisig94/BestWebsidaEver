@@ -9,7 +9,28 @@
 </head>
 
 <body>
-    <h3> Niðurstöður úr Selfossmótinu</h3>
+    <h2>
+        <p>Það eru til miklu fleiri vellir á landinu. <a href="kort.html"> Sjá velli </a> landins! </p>
+    </h2>
+
+    <form id="frm1" action="/action_page.php">
+        Keppandi 1 <input type="text" name="fullname" value=""><br>
+        Hola 1: <input type="number" name="hola1" value=""><br>
+        Hola 2: <input type="number" name="hola2" value=""><br>
+        Hola 3: <input type="number" name="hola2" value=""><br>
+        Hola 4: <input type="number" name="hola3" value=""><br>
+    </form>
+
+    <button onclick="myFunction()">Skrá nafn</button>
+
+
+    <h3>Niðurstöður úr velli:</h3>
+    <select>
+        <option value="Selfoss">Selfoss</option>
+        <option value="Laugardal">Laugardal</option>
+        <option value="Flúðir">Flúðir</option>
+        <option value="Akureyri">Akureyri</option>
+    </select>
     <table class="tg" ;
            STYLE="margin-bottom: 30px;">
         <tr>
@@ -25,8 +46,8 @@
             <th class="tg-0lax">9</th>
         </tr>
         <tr>
-            <td class="tg-cly1">Eva</td>
-            <td class="tg-cly1">5</td>
+            <td class="tg-cly1"> <p id="nafnKeppanda"></p></td>
+            <td class="tg-cly1">2</td>
             <td class="tg-cly1">5</td>
             <td class="tg-cly1">4</td>
             <td class="tg-0lax">6</td>
@@ -62,7 +83,13 @@
         </tr>
     </table>
 
-    <h3> Niðurstöður úr Flúðamótinu</h3>
+    <h3>Niðurstöður úr velli:</h3>
+    <select>
+        <option value="Selfoss">Selfoss</option>
+        <option value="Laugardal">Laugardal</option>
+        <option value="Flúðir">Flúðir</option>
+        <option value="Akureyri">Akureyri</option>
+    </select>
     <table class="græntafla">
         <tr>
             <th class="græntafla-cly1">Þátttakandi/Hola</th>
@@ -129,5 +156,15 @@
     <h5 style="text-align:center;"> ffg@gmail.com</h5>
     <h5 style="text-align:center;">s.861-5574 </h5>
 </footer>
-<script></script>
+<script>
+    function myFunction() {
+  var x = document.getElementById("frm1");
+  var text = "";
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    text += x.elements[i].value;
+  }
+  document.getElementById("nafnKeppanda").innerHTML = text;
+}
+</script>
 </html>
