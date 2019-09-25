@@ -7,7 +7,17 @@
 </head>
 
 <body>
-    <h1 style="text-align:center;">Kort af folfvöllum</h1>
+    <div class="header" id="h1Kort">
+        <div class="dropdown">
+            <button class="dropbtn">Valmöguleikar</button>
+            <div class="dropdown-content">
+                <a href="Index.html">Forsíða</a>
+                <a href="Folfbyrjun.html">Byrjunarsíða Folfs</a>
+                <a href="folf.html">Niðurstöður Folfs</a>
+            </div>
+        </div>
+        <h1 style="text-align:center;">Kort af folfvöllum</h1>
+    </div>
     <hr>
     <h4 style="text-align:center;">&#10148; Smellið á punktana á myndinni til að sjá nákvæma staðsetningu</h4>
 
@@ -41,6 +51,7 @@
         <h3 id="akureyri">Akureyri</h3>
 
         <p>Á Eiðsvelli á Akureyri</p>
+        <img id="map_img" src="Myndir/EiðsvöllurAkureyri.jpg" width="400" height="400" />
 
     </div>
     <div>
@@ -48,6 +59,7 @@
         <h3 id="egilsstadir">Egilsstaðir</h3>
 
         <p>Í Tjarnargarðinum á Egilsstöðum.</p>
+        <img id="map_img" src="Myndir/egilstadir.JPG" width="400" height="400" />
 
     </div>
 
@@ -56,6 +68,7 @@
         <h3 id="fludir">Flúðir</h3>
 
         <p>Við félagsheimilið á Flúðum.</p>
+        <img id="map_img" src="Myndir/fludir.jpg" width="400" height="400" />
 
     </div>
 
@@ -64,6 +77,10 @@
         <h3 id="reykjavik">Reykjavík</h3>
 
         <p>Í Reykjavík eru margir vellir. Til dæmis er einn á Klambratúni og annar í laugardalnum.</p>
+        <a onclick="myFunction" href="#allirReykjavik">Sjá alla</a> í Reykjavík
+        <div id="allirReykjavik">
+            Allir vellir
+        </div>
 
     </div>
 
@@ -72,16 +89,23 @@
         <h3 id="selfoss">Selfoss</h3>
 
         <p>Á tjaldsvæðinu á Selfoss</p>
+        <img id="map_img" src="Myndir/Selfoss-folfskilti.jpg" width="400" height="400" />
+
 
     </div>
 
     <div>
 
         <h3 id="vestmannaeyjar">Vestmannaeyjar</h3>
+        <img id="map_img" src="Myndir/vestmannaeyjar.jpg" width="400" height="400" />
 
-        <p>Við íþróttahúsið og sundlaugina í Vestmannaeyjum.<span id="dots">...</span><span id="more"> Folfvollurinn við vestmannaeyjar
-                   er skemmtilegur og stuttur völlur sem hægt er að spila á stuttum tíma. Sundlaugin er síðan við hliðiná lokaholunni þannig því er
-                   tilvalið að skola af sér svitann eftir folfið þar.</span></p>
+        <p>
+            Við íþróttahúsið og sundlaugina í Vestmannaeyjum.<span id="dots">...</span><span id="more">
+                Folfvollurinn við vestmannaeyjar
+                er skemmtilegur og stuttur völlur sem hægt er að spila á stuttum tíma. Sundlaugin er síðan við hliðiná lokaholunni þannig því er
+                tilvalið að skola af sér svitann eftir folfið þar.
+            </span>
+        </p>
         <button onclick="myFunction()" id="myBtn">Lesa meira</button>
 
     </div>
@@ -116,5 +140,23 @@
             btnText.innerHTML = "Lesa minna";
             moreText.style.display = "inline";
         }
+    }
+
+    // When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the header
+var header = document.getElementById("h1Kort");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
     }
 </script>
