@@ -6,7 +6,7 @@
     <title>Stats</title>
 </head>
 <body>
-    <h1>Statistics</h1>
+    <h1>Youtube Skemmtilegheit</h1>
     <div class="topnav">
         <a href="Index.html">Home</a>
         <a class="active" href="gagnagrunnur.html">Gagnagrunnur</a>
@@ -18,8 +18,62 @@
     <form action="game.html">
         <input type="submit" value="Fara í leik" />
     </form>
-</body>
-<script>
 
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/04yFyO3OtUE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/bMd_oxCElos" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+<body>
+    <h1>Skemmtileg Input fields</h1>
+    <p>Hæð:</p>
+    <input type="number"
+           id="xHeight"
+           value="hæð"> 
+    <p>Þyngd:</p>
+    <input type="number"
+           id="yWeight"
+           value="þyngd"> 
+  
+    <button type="button" 
+            onclick="myFunction()"> 
+      Reikna! 
+  </button> 
+  <h3>BMI stuðullinn þinn er:</h3>
+  <p id="utkoma"></p>     
+  <p id="stada"></p>
+</body>
+<body>
+    <h1>Google maps API</h1>
+    <div id="googleMap" style="width:100%;height:400px;"></div>
+</body>
+<script> 
+    function myFunction() { 
+        var xHeight =  document.getElementById("xHeight").value;
+        var yWeight = document.getElementById("yWeight").value;
+        var m2 = (xHeight/100) * (xHeight/100);
+        var x = yWeight/m2;
+        document.getElementById("utkoma").innerHTML = x; 
+        if (x < 18.5){
+            document.getElementById("stada").innerHTML = "UnderWeight";
+        } 
+        else if(18.5 < x < 24.9){
+            document.getElementById("stada").innerHTML = "Normal Weight";
+        }
+        else if(25 < x < 29.9){
+            document.getElementById("stada").innerHTML = "Overweight";
+        }
+        else if(x > 30){
+            document.getElementById("stada").innerHTML = "Obesity";
+        }
+    } 
+
+    function myMap() {
+        var mapProp= {
+        center:new google.maps.LatLng(50,30),
+         zoom:5,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        }
 </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3GYq__GsDPhJMl2gNLP5L-Ud4vyssZ_w&callback=myMap"></script>
 </html>
