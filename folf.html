@@ -140,6 +140,11 @@
             <td class="græntafla-0lax">?</td>
         </tr>
     </table>
+
+    <table id="myTable" border="1"></table><form> 
+    <input type="button" onclick="createTable()" value="Búa til töflu"> 
+    </form>
+
     <form action="kort.html">
         <input type="submit" value="Kort" />
     </form>
@@ -165,6 +170,22 @@
     text += x.elements[i].value;
   }
   document.getElementById("nafnKeppanda").innerHTML = text;
+}
+
+function createTable()
+{
+rn = window.prompt("Fjöldi leikmanna", 1);
+cn = window.prompt("Fjöldi hola",1);
+  
+ for(var r=0;r<parseInt(rn,10);r++)
+  {
+   var x=document.getElementById('myTable').insertRow(r);
+   for(var c=0;c<parseInt(cn,10);c++)  
+    {
+     var y=  x.insertCell(c);
+     y.innerHTML="Row-"+r+" Column-"+c; 
+    }
+   }
 }
 </script>
 </html>
