@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="gagbagrunnur.css">
     <title>Stats</title>
 </head>
 <body>
@@ -53,15 +54,28 @@
         var x = yWeight/m2;
         document.getElementById("utkoma").innerHTML = x; 
         if (x < 18.5){
-            document.getElementById("stada").innerHTML = "UnderWeight";
+            // document.getElementById("stada").innerHTML = "UnderWeight";
+            var uW = "Underweight";
+            var result = uW.fontcolor("green");
+            document.getElementById("stada").style.backgroundColor = "green";
+            document.getElementById("stada").innerHTML = "Underweight";
         } 
-        else if(18.5 < x < 24.9){
+        else if(18.5 < x && x < 24.9){
+            var nW = "Normal Weight";
+            var resultnW = nW.fontcolor("orange");
+            document.getElementById("stada").style.backgroundColor = "Orange";
             document.getElementById("stada").innerHTML = "Normal Weight";
         }
-        else if(25 < x < 29.9){
+        else if(25 < x && x < 29.9){
+            var oW = "Overweight";
+            var resultoW = oW.fontcolor("Tomato");
+            document.getElementById("stada").style.backgroundColor = "Tomato";
             document.getElementById("stada").innerHTML = "Overweight";
         }
         else if(x > 30){
+            var oB = "Obesity";
+            document.getElementById("stada").style.backgroundColor = "Red";
+            var resultoB = oB.fontcolor("red");
             document.getElementById("stada").innerHTML = "Obesity";
         }
     } 
