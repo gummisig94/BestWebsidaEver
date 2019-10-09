@@ -168,15 +168,24 @@ function createTable()
 {
 rn = window.prompt("Fjöldi leikmanna", 1);
 cn = window.prompt("Fjöldi hola",1);
+
+var l;
+var nofn = [];
+    for(l=1; l<= rn; l++){
+        nafnL = window.prompt("Nafn leikmanns nr " + l);
+        var nynofn = nofn.push(nafnL)
+    }
   
- for(var r=0;r<parseInt(rn,10);r++)
+ for(var r=0;r<parseInt(rn,10)+1;r++)
   {
    var x=document.getElementById('myTable').insertRow(r);
    for(var c=0;c<parseInt(cn,10);c++)  
     {
      var y=  x.insertCell(c);
-     y.innerHTML="Row-"+r+1" Column-"+c; 
-     y.setAttribute('class', "græntafla")
+       if (r== 0 && c== 0){y.innerHTML = "Þátttakandi/Hola"}
+       if (r==0 && c != 0) {y.innerHTML = c}
+       if (c == 0 && r>0) {
+        y.innerHTML = nofn[r-1]; }
     }
    }
 }
