@@ -153,14 +153,6 @@
     </form>
 </body>
 
-
-
-<footer>
-    <hr>
-    <h4 style="text-align:center;"> Folffélag Guðmundar</h4>
-    <h5 style="text-align:center;"> ffg@gmail.com</h5>
-    <h5 style="text-align:center;">s.861-5574 </h5>
-</footer>
 <script>
     function myFunction() {
   var x = document.getElementById("frm1");
@@ -183,9 +175,16 @@ cn = window.prompt("Fjöldi hola",1);
    for(var c=0;c<parseInt(cn,10);c++)  
     {
      var y=  x.insertCell(c);
-     y.innerHTML="Row-"+r+" Column-"+c; 
+     y.innerHTML="Row-"+r+1" Column-"+c; 
+     y.setAttribute('class', "græntafla")
     }
    }
 }
 </script>
+<footer>
+    <hr>
+    <h4 style="text-align:center;"> Folffélag Guðmundar</h4>
+    <h5 style="text-align:center;"> ffg@gmail.com</h5>
+    <h5 style="text-align:center;">s.861-5574 </h5>
+</footer>
 </html>
